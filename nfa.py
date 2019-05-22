@@ -35,13 +35,12 @@ class NFA():
         flag = False
         for (key, value) in self.transitions.items():
             for tupl in value:
-                if key == self.initialState:
-                    if not flag:
-                        demo += "->"
-                        flag = True
+                if key == self.initialState and not flag:    
+                    demo += "->"
+                    flag = True
                 a = key
-                b = tupl[1]
                 l = tupl[0]
+                b = tupl[1]
                 if a in self.finalState:
                     demo += '*'
                 demo += 'q{},{},'.format(a, l)
