@@ -1,6 +1,6 @@
 class NFA():
     def __init__(self):
-        self.instance = None
+        self.initialState = None
         self.finalState = []
         self.numofStates = None
         self.alphabet = []
@@ -24,7 +24,7 @@ class NFA():
                 tmp = int(state.split('q')[1])
                 statesInt.append(tmp)
                 if '->' in state:
-                    self.instance = tmp
+                    self.initialState = tmp
                 if '*' in state and tmp not in self.finalState:
                     self.finalState.append(tmp)
             
@@ -35,7 +35,7 @@ class NFA():
         flag = False
         for (key, value) in self.transitions.items():
             for tupl in value:
-                if key == self.instance:
+                if key == self.initialState:
                     if not flag:
                         demo += "->"
                         flag = True
@@ -49,8 +49,3 @@ class NFA():
                     demo += '*'
                 demo += 'q{}\n'.format(b)
         return demo
-
-                
-
-                
-        
