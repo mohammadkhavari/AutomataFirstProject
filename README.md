@@ -38,18 +38,18 @@ tmp.minimize()
 print(tmp)
 '''3
 0,1
+->q0,1,q1
 q0,0,q1
-q0,1,q1
+q1,1,*q2
 q1,0,q1
-q1,1,q2
-q2,0,q2
-q2,1,q2'''
+*q2,0,*q2
+*q2,1,*q2'''
 ```
 ### Properties
 NFA Properties: 
 ```python
 #attributes
-nfa.instance = None
+nfa.initilState = None
 nfa.finalState = []
 nfa.numofStates = None
 nfa.alphabet = []
