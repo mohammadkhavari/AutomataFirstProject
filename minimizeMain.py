@@ -1,6 +1,6 @@
 from dfa import DFA
 
-with open("input.txt") as f:
+with open("input1.txt") as f:
     tmp = DFA()
     sample = f.read()
     tmp.constructNFA(sample)

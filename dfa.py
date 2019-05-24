@@ -49,9 +49,7 @@ class DFA(NFA):
 
     def minimization(self, classes, state_to_class):
         finals = self.finalState
-        start = self.instance
         self.transitions = {}
-        self.instance = None
         self.finalState = []
         self.numofStates = len(classes)
         for i in range(0, self.numofStates):
@@ -59,6 +57,8 @@ class DFA(NFA):
         for class_ in classes:
             state = list(class_.keys())[0]
             nextStates = class_[state]
+            if state in finals:
+                self.finalState.append(state_to_class[state])
             for i in range(0, len(self.alphabet)):
                 self.add(state_to_class[state], self.alphabet[i], state_to_class[nextStates[i]])
 
@@ -66,7 +66,7 @@ class DFA(NFA):
         from queue import Queue
         reachables = set()
         q = Queue()
-        q.put(self.instance)
+        q.put(self.initialState)
         while q.qsize() > 0:
             state = q.get()
             reachables.add(state)
