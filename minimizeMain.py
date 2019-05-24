@@ -7,4 +7,3 @@ with open("input1.txt") as f:
     tmp.minimize()
     print(tmp)
 
-
