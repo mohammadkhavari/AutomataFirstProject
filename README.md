@@ -4,14 +4,8 @@
 - Transform NFA to DFA
 - Minimize DFA states
 
-###**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
 ## NFA and DFA Classes
-###construction
+### construction
 It's possible to construct DFA and NFA by input string content.
 ```python
 from dfa import DFA
@@ -22,7 +16,7 @@ with open("input.txt") as f:
 ```
 or add transitions with `add(source, label, destination)`
 
-###String Representation
+### String Representation
 NFA and DFA objects could represent in string format : (like the input format)
 ```python
 sample = '''5
